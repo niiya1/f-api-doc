@@ -1,0 +1,55 @@
+=============================
+deposit_history
+=============================
+
+
+入金履歴を取得します。
+
+
+パラメータ
+==============
+
+.. csv-table::
+   :header: "パラメータ", "必須", "詳細", "型", "デフォルト"
+   :widths: 5, 5, 20, 10, 5
+
+   "currency", "Yes", "通貨。公開情報APIのcurrenciesで取得できるものが指定できます。", "例)jpy 等", "　"
+   "from", "No", "この順番のレコードから取得", "numerical str", "0"
+   "count", "No", "取得するレコード数", "numerical", "1000"
+   "from_id", "No", "この入金IDのレコードから取得", "numerical", "0"
+   "end_id", "No", "この入金IDのレコードまで取得", "numerical", "infinty"
+   "order", "No", "ソート順", "ASC (昇順)もしくは DESC (降順)", "DESC"
+   "since", "No", "開始タイムスタンプ", "UNIX_TIMESTAMP", "0"
+   "end", "No", "終了タイムスタンプ", "UNIX_TIMESTAMP", "infinty"
+
+注意: “since”もしくは”end”をセットした場合、”order”は強制的に”ASC”となります。
+
+戻り値
+==============
+.. code-block:: python
+
+    {
+        "success":1,
+        "return":{
+            "3816":{
+              "timestamp":1435745065,
+              "address":"12qwQ3sPJJAosodSUhSpMds4WfUPBeFEM2",
+              "amount":0.001,
+              "txid":"64dcf59523379ba282ae8cd61d2e9382c7849afe3a3802c0abb08a60067a159f",
+            },
+            "3814":{
+              "timestamp":1435548083,
+              "address":"12qwQ3sPJJAosodSUhSpMds4WfUPBeFEM2",
+              "amount":0.001,
+              "txid":"7d012cfff6e67a8938f93215367eef4177604459631ea62c85550980dca71819"
+            },
+        }
+    }
+
+.. csv-table::
+   :header: "キー", "詳細", "型"
+
+   "timestamp", "出金日時", "UNIX_TIMESTAMP"
+   "address", "出金先アドレス", "str"
+   "amount", "取引量", "float"
+   "txid", "トランザクションid", "str"

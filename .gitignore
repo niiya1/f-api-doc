@@ -1,0 +1,5 @@
+docs/_build/
+*.DS_Store
+.idea/
+*.mo
+**.swp
