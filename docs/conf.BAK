@@ -111,9 +111,6 @@ htmlhelp_basename = 'api-docdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
-# add for platex2e
-latex_engine = 'platex'
-
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
