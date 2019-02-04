@@ -114,6 +114,11 @@ htmlhelp_basename = 'api-docdoc'
 # add for platex2e
 latex_engine = 'platex'
 
+latex_docclass = {
+    'howto': 'jsarticle',
+    'manual': 'jsbook',
+}
+
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
